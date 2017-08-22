@@ -28,7 +28,7 @@ extension UIColor {
         )
     }
     
-    public class func colorWithHex(hexString: String, alpha: CGFloat = 1) -> UIColor {
+    public static func colorWithHex(hexString: String, alpha: CGFloat = 1) -> UIColor {
         var hexWithoutSymbol = hexString
         if hexWithoutSymbol.hasPrefix("#") {
             hexWithoutSymbol.remove(at: hexWithoutSymbol.startIndex)
@@ -57,7 +57,7 @@ extension UIColor {
         return UIColor(red: CGFloat(r / 255.0), green: CGFloat(g / 255.0), blue: CGFloat(b / 255.0), alpha: alpha)
     }
     
-    public class func colorWith(r: Int, g: Int, b: Int, alpha: Float = 1) -> UIColor {
+    public static func colorWith(r: Int, g: Int, b: Int, alpha: Float = 1) -> UIColor {
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(alpha))
     }
 }
