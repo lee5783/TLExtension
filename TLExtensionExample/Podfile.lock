@@ -1,0 +1,25 @@
+PODS:
+  - Localize-Swift (1.7.1)
+  - TLExtension (1.0.0):
+    - Localize-Swift (~> 1.7)
+    - TLExtension/Foundation (= 1.0.0)
+    - TLExtension/UIKit (= 1.0.0)
+  - TLExtension/Foundation (1.0.0):
+    - Localize-Swift (~> 1.7)
+  - TLExtension/UIKit (1.0.0):
+    - Localize-Swift (~> 1.7)
+
+DEPENDENCIES:
+  - TLExtension (from `../`)
+
+EXTERNAL SOURCES:
+  TLExtension:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
+  TLExtension: 19c5edeb405ba0d6d8ef30858af5bae9ab1ae948
+
+PODFILE CHECKSUM: 2d0cc92e79ea9426b6585c68fde9ffbf23d3ca54
+
+COCOAPODS: 1.3.0.rc.1
