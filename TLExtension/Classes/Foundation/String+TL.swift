@@ -9,10 +9,10 @@
 import UIKit
 import Localize_Swift
 
-//Localize
+// Localize
 extension String {
     public var localized: String {
-        return localized(using: self, in: Bundle.main)
+        return self.localized(using: self, in: Bundle.main)
     }
 }
 
@@ -119,18 +119,18 @@ extension String {
     
     public func substring(from: Int) -> String {
         let fromIndex = index(from: from)
-        return self.substring(from: fromIndex)
+        return String(self[fromIndex...])
     }
     
     public func substring(to: Int) -> String {
         let toIndex = index(from: to)
-        return self.substring(to: toIndex)
+        return String(self[self.startIndex..<toIndex])
     }
     
     public func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
-        return self.substring(with: startIndex..<endIndex)
+        return String(self[startIndex..<endIndex])
     }
     
     /// Return a string with first letter was capitaled
@@ -139,9 +139,7 @@ extension String {
         if self.length < 2 {
             retVal = self.capitalized
         } else {
-            let to = self.index(self.startIndex, offsetBy: 1)
-            let from = self.index(self.startIndex, offsetBy: 1)
-            retVal = "\(self.substring(to: to).capitalized)\(self.substring(from: from))"
+            retVal = "\(self.substring(to: 1).capitalized)\(self.substring(from: 1))"
         }
         return retVal
     }
@@ -150,7 +148,10 @@ extension String {
     public func stringFromHTML(string: String?) -> String {
         do {
             let str = try NSAttributedString(data: string!.data(using: String.Encoding.utf8, allowLossyConversion: true
-            )!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            )!, options: [
+                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
+            ], documentAttributes: nil)
             return str.string
         } catch {
             print("html error\n", error)

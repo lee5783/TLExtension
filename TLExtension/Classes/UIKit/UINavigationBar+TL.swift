@@ -55,8 +55,8 @@ extension UINavigationBar {
         UINavigationBar.appearance().tintColor  = .white
         self.tintColor = .white
         self.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont.systemFont(ofSize: 18)
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)
         ]
     }
 }

@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "TLExtension"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "Extensions collection"
   s.description  = "Useful swift extension for iOS development"
   s.homepage     = "https://github.com/lee5783/TLExtension.git"
@@ -15,13 +15,13 @@ Pod::Spec.new do |s|
   s.author             = "lee5783"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/lee5783/TLExtension.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/lee5783/TLExtension.git", :tag => "2.0.0" }
   # s.source       = { :path => '.' }
 
-  s.dependency 'Localize-Swift', '~> 1.7'
+  s.dependency 'Localize-Swift', '~> 2.x'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #s.source_files  = "TLExtension/Classes", "TLExtension/Classes/**/*.{h,m,swift}"
@@ -33,5 +33,5 @@ Pod::Spec.new do |s|
     foundation.source_files = 'TLExtension/Classes/Foundation/*.{m,h,swift}'
     #cells.dependency 'iOSShared/Core'
   end
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.0" }
 end
